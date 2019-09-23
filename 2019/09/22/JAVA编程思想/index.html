@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="于兆新|Blog">
 <meta property="og:description" content="JAVA 编程思想-读书笔记第一章  略第二章 一切都是对象用引用操作对象一个引用如果在没有被初始化之前，向该引用发消息就会出现运行时异常，例如： 1String s  因此一种安全的做法：创建一个引用的同时便进行初始化。 类中字段如果类中的成员是基本数据类型，即使没有进行初始化，Java也会确保它获得一个默认值，但是如果字段是对某个对象的引用，那么必须初始化该引用。 static当声明一个类为s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-22T15:12:01.113Z">
+<meta property="og:updated_time" content="2019-09-23T14:55:58.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA-编程思想">
 <meta name="twitter:description" content="JAVA 编程思想-读书笔记第一章  略第二章 一切都是对象用引用操作对象一个引用如果在没有被初始化之前，向该引用发消息就会出现运行时异常，例如： 1String s  因此一种安全的做法：创建一个引用的同时便进行初始化。 类中字段如果类中的成员是基本数据类型，即使没有进行初始化，Java也会确保它获得一个默认值，但是如果字段是对某个对象的引用，那么必须初始化该引用。 static当声明一个类为s">
@@ -186,6 +186,15 @@
 <h3 id="类中字段"><a href="#类中字段" class="headerlink" title="类中字段"></a>类中字段</h3><p>如果类中的成员是基本数据类型，即使没有进行初始化，Java也会确保它获得一个默认值，但是如果字段是对某个对象的引用，那么必须初始化该引用。</p>
 <h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><p>当声明一个类为<code>static</code>时，就意味着这个域或方法不会与该类的的任何对象实例关联在一起。所以，即使从未创建过该类的任何对象，也可以调用其<code>static</code> 域或方法。</p>
 <h3 id="编码风格"><a href="#编码风格" class="headerlink" title="编码风格"></a>编码风格</h3><p>驼峰命名</p>
+<h2 id="第三章-操作符"><a href="#第三章-操作符" class="headerlink" title="第三章 操作符"></a>第三章 操作符</h2><p>操作符接受一个或多个参数，并生成一个新值。另外，有些操作符可能会改变操作数自身的值，这被成为“副作用”。</p>
+<h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><p>基本数据类型赋值：是直接内容进行复制。<br>引用类型赋值：是将引用进行复制，但是实际引用所指向的对象是同一个。所以如果对该对象进行了修改，则两个引用对应的值也就同时发生了改变。</p>
+<h3 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h3><p>基本数据类型：<code>==</code> 或者 <code>!=</code> .<br>包装类型：<code>equals()</code><br>引用类型对象比较实际内容是否相同：需要注意的是，查看该类是否覆写了 <code>equals()</code> 方法。否则不一定能达到预期结果。</p>
+<h3 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h3><p>这里需要注意的就一点，短路<br>短路：即一旦能够明确无误地确定整个表达式的值，就不再计算表达式剩余部分。</p>
+<p>例如 ：<br>    1 、&amp;&amp; 已经遇到 false  那没有计算的部分就不用再计算了，整个表达式就是false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">boolean a = false;</span><br><span class="line">if(a &amp;&amp; (100-10&gt;80))&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">// 其中(100-10&gt;80) 是不会执行的</span><br></pre></td></tr></table></figure>
+
+<pre><code>2、 &amp;&amp; 已经遇到 true  那没有计算的部分就不用再计算了，整个表达式就是true。同样的道理。</code></pre><h3 id="直接常量"><a href="#直接常量" class="headerlink" title="直接常量"></a>直接常量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">L // 或者 l 代表 long</span><br><span class="line">F // 或者 f 代表 float</span><br><span class="line">D // 或者 d 代表 double</span><br><span class="line">1L //</span><br><span class="line">1F //</span><br><span class="line">1D //</span><br></pre></td></tr></table></figure>
+
 
       
 
