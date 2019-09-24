@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="于兆新|Blog">
 <meta property="og:description" content="JAVA 编程思想-读书笔记第一章  略第二章 一切都是对象用引用操作对象一个引用如果在没有被初始化之前，向该引用发消息就会出现运行时异常，例如： 1String s  因此一种安全的做法：创建一个引用的同时便进行初始化。 类中字段如果类中的成员是基本数据类型，即使没有进行初始化，Java也会确保它获得一个默认值，但是如果字段是对某个对象的引用，那么必须初始化该引用。 static当声明一个类为s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-24T14:39:06.206Z">
+<meta property="og:updated_time" content="2019-09-24T14:57:00.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA-编程思想">
 <meta name="twitter:description" content="JAVA 编程思想-读书笔记第一章  略第二章 一切都是对象用引用操作对象一个引用如果在没有被初始化之前，向该引用发消息就会出现运行时异常，例如： 1String s  因此一种安全的做法：创建一个引用的同时便进行初始化。 类中字段如果类中的成员是基本数据类型，即使没有进行初始化，Java也会确保它获得一个默认值，但是如果字段是对某个对象的引用，那么必须初始化该引用。 static当声明一个类为s">
@@ -204,10 +204,15 @@
 <h2 id="控制执行流程"><a href="#控制执行流程" class="headerlink" title="控制执行流程"></a>控制执行流程</h2><h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for(initialization; Boolean-expression; step)</span><br><span class="line">    statement;</span><br></pre></td></tr></table></figure>
 
 <p><code>initialization</code>: 初始化表达式<br><code>Boolean-expression</code>: 布尔表达式<br><code>step</code>: 部进<br>有趣的是，三者都可以为空。每次迭代前会测试布尔表达式。若获得的结果是<code>false</code>,就会执行<code>for</code>语句后面的代码。每次循环结束会执行一次<strong>步进</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(;;)</span><br><span class="line">// 等价于</span><br><span class="line">while(true)</span><br></pre></td></tr></table></figure>
+
 <h3 id="逗号操作符"><a href="#逗号操作符" class="headerlink" title="逗号操作符"></a>逗号操作符</h3><p><code>java</code> 中唯一用到逗号操作符的地方就是<code>for</code>循环的控制表达式。（在控制表达式的初始化和步进控制部分，可以使用一系列由逗号分割的语句，而且那些语句均会单独执行）。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(int i =1, j = i + 10; i &lt;5 ; i++, j= i*2)&#123;</span><br><span class="line">    // 相应操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在初始化可以拥有任意数量的具有<strong>相同类型</strong>的变量定义。</p>
+<h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><p><code>return</code> 关键字有两方面用途：<br>一方面指定一个方法返回什么值。<br>另一方面它会导致当前方法退出，并返回那个值。</p>
+<p>如果在返回<code>void</code>的方法中没有<code>return</code>语句，那么在该方法的结尾处会有一个隐式的<code>return</code>。</p>
+<h3 id="break-and-continue"><a href="#break-and-continue" class="headerlink" title="break and continue"></a>break and continue</h3><p>在任何的流程控制语句主体部分，都可以用<code>break</code>和<code>continue</code>控制循环的流程。<br><code>break</code>用于强制退出循环，不执行循环中剩余的语句。<br><code>continue</code>用于停止执行当前迭代，然后退回循环起始处，开始下一次迭代。</p>
 
       
 
