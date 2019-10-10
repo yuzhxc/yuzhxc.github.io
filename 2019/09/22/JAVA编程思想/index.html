@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="于兆新|Blog">
 <meta property="og:description" content="JAVA 编程思想-读书笔记第一章  略第二章 一切都是对象用引用操作对象一个引用如果在没有被初始化之前，向该引用发消息就会出现运行时异常，例如： 1String s  因此一种安全的做法：创建一个引用的同时便进行初始化。 类中字段如果类中的成员是基本数据类型，即使没有进行初始化，Java也会确保它获得一个默认值，但是如果字段是对某个对象的引用，那么必须初始化该引用。 static当声明一个类为s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-29T05:25:59.126Z">
+<meta property="og:updated_time" content="2019-10-10T00:43:43.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA-编程思想">
 <meta name="twitter:description" content="JAVA 编程思想-读书笔记第一章  略第二章 一切都是对象用引用操作对象一个引用如果在没有被初始化之前，向该引用发消息就会出现运行时异常，例如： 1String s  因此一种安全的做法：创建一个引用的同时便进行初始化。 类中字段如果类中的成员是基本数据类型，即使没有进行初始化，Java也会确保它获得一个默认值，但是如果字段是对某个对象的引用，那么必须初始化该引用。 static当声明一个类为s">
@@ -213,6 +213,10 @@
 <h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><p><code>return</code> 关键字有两方面用途：<br>一方面指定一个方法返回什么值。<br>另一方面它会导致当前方法退出，并返回那个值。</p>
 <p>如果在返回<code>void</code>的方法中没有<code>return</code>语句，那么在该方法的结尾处会有一个隐式的<code>return</code>。</p>
 <h3 id="break-and-continue"><a href="#break-and-continue" class="headerlink" title="break and continue"></a>break and continue</h3><p>在任何的流程控制语句主体部分，都可以用<code>break</code>和<code>continue</code>控制循环的流程。<br><code>break</code>用于强制退出循环，不执行循环中剩余的语句。<br><code>continue</code>用于停止执行当前迭代，然后退回循环起始处，开始下一次迭代。</p>
+<h2 id="初始化与清理"><a href="#初始化与清理" class="headerlink" title="初始化与清理"></a>初始化与清理</h2><p><strong>构造器：</strong>这是一个在创建对象时被自动调用的特殊方法。<br><strong>清理：</strong><code>java</code>中提供了<em>垃圾回收器</em>对于不在使用的内存资源进行自动释放。</p>
+<h3 id="用构造器确保初始化"><a href="#用构造器确保初始化" class="headerlink" title="用构造器确保初始化"></a>用构造器确保初始化</h3><p><strong>构造器</strong>采用和类相同的名称。 由于构造器的名称必须与类名完全相同，所以<em>每个方法首字母小写</em>的编码风格并不适用于构造器。<br>构造器没有返回值。这与返回值是<code>void</code>是明显不同的。<code>new</code>表达式确实返回了对新创建对象的引用，但构造器本身并没有任何返回值。因为返回值类型永远是该类类型不允许人们自行指定，所以编译器这么做很合理。</p>
+<p><strong>默认构造器（无参构造器）：</strong>不接受任何参数的构造器。如果一个类没有声明任何的构造器，编译器会默认为该类添加一个默认的构造器。</p>
+<p>从概念上讲<strong>初始化</strong>和<strong>创建</strong>是彼此独立的。但是<code>java</code>中并没有看见显式的调用<code>initialize()</code>。在<code>java</code>中<strong>初始化</strong>与<strong>创建</strong>是绑定在一起的，两者不能分开。</p>
 
       
 
