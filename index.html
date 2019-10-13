@@ -241,6 +241,21 @@
 <p><code>this</code>关键字也可以作为参数传递给其他方法，因为<code>this</code>的用法和其他对象引用并无不同。</p>
 <h4 id="在构造器中调用构造器"><a href="#在构造器中调用构造器" class="headerlink" title="在构造器中调用构造器"></a>在构造器中调用构造器</h4><p>我们经常会为一个类提供多个构造器，有的时候为了避免代码重复，可能会在一个构造器中去调用另一个构造器，可以用<code>this</code>做到这一点。 在构造器中如果为<code>this</code>添加了参数列表，那么就有了不同的含义。意思是对符合此参数列表的构造器的调用。<br><strong>注意：</strong>尽管可以使用<code>this</code>调用一个构造器，但却不能调用两个，而且这个构造器的调用语句必须置于最起始位置，否则编译不通过。除此之外，编译器禁止在其他方法中调用构造器。</p>
 <h4 id="对比this了解static的含义"><a href="#对比this了解static的含义" class="headerlink" title="对比this了解static的含义"></a>对比this了解static的含义</h4><p><code>static</code> 就是属于类的，所以<code>static</code>方法就是没有<code>this</code>的方法，也就是说可以在没有创建任何对象的前提下，仅仅通过类本身就可以调用<code>static</code>方法。在<code>static</code>方法的内部不能调用非静态方法。</p>
+<h3 id="成员初始化"><a href="#成员初始化" class="headerlink" title="成员初始化"></a>成员初始化</h3><p>所有变量在使用之前都必须初始化。如果变量没有被初始化就被使用就会报编译错误。<br>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    i++;<span class="comment">// Error -- i not initialized</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里类的成员（即字段）会有些不同。类的每个基本数据类型的数据成员在对象初始化时都会默认赋该数据类型的默认值，引用类型被设置为<code>null</code>。</p>
+<h3 id="初始化顺序"><a href="#初始化顺序" class="headerlink" title="初始化顺序"></a>初始化顺序</h3><p>记住下面的公式就完全够用了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">静态变量 = 静态代码块 &gt; 非静态成员变量 = 非静态代码块 &gt; 构造函数</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h3><p>数组: 数组是相同类型的、用一个标识符名称封装到一起的一个对象序列或基本类型数据序列。</p>
+<p>数组声明方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr1; <span class="comment">// 第一种方式</span></span><br><span class="line"><span class="keyword">int</span> arr2[]; <span class="comment">// 第二种方式</span></span><br><span class="line"><span class="comment">// -------前两种方式中，推荐第一种---------</span></span><br><span class="line"><span class="keyword">int</span> arr3 = &#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">6</span>&#125;;<span class="comment">// 第三种方式</span></span><br></pre></td></tr></table></figure>
+
+<p>数组中有一个固有成员变量<code>length</code>表示数组中有多少个元素。数组的下标从<code>0</code>开始，所以能使用的最大下标数是<code>length-1</code>。</p>
+<h4 id="可变参数列表"><a href="#可变参数列表" class="headerlink" title="可变参数列表"></a>可变参数列表</h4><p>当定义的方法参数列表某种类型参数个数不确定时，可以使用可变参数列表，接收后编译器会自动转换成数组。<br>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function(<span class="keyword">int</span> a, String... strs)&#123;</span><br><span class="line">    <span class="comment">// strs 是一个数组格式了</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 模拟调用</span></span><br><span class="line">function(<span class="number">1</span>, <span class="string">"张三"</span>);<span class="comment">// ok</span></span><br><span class="line">function(<span class="number">2</span>, <span class="string">"张三"</span>, <span class="string">"李四"</span>); <span class="comment">// ok</span></span><br></pre></td></tr></table></figure>
+
 
       
 
