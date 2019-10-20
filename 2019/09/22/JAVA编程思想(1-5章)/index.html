@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>于兆新|Blog</title>
+  <title>JAVA-编程思想 | 于兆新|Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
-<meta name="keywords" content="yuzhxc">
-<meta property="og:type" content="website">
-<meta property="og:title" content="于兆新|Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="JAVA 编程思想-读书笔记第一章  略第二章 一切都是对象用引用操作对象一个引用如果在没有被初始化之前，向该引用发消息就会出现运行时异常，例如： 1String s  因此一种安全的做法：创建一个引用的同时便进行初始化。 类中字段如果类中的成员是基本数据类型，即使没有进行初始化，Java也会确保它获得一个默认值，但是如果字段是对某个对象的引用，那么必须初始化该引用。 static当声明一个类为s">
+<meta name="keywords" content="java-core">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA-编程思想">
+<meta property="og:url" content="http://yoursite.com/2019/09/22/JAVA编程思想(1-5章)/index.html">
 <meta property="og:site_name" content="于兆新|Blog">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="JAVA 编程思想-读书笔记第一章  略第二章 一切都是对象用引用操作对象一个引用如果在没有被初始化之前，向该引用发消息就会出现运行时异常，例如： 1String s  因此一种安全的做法：创建一个引用的同时便进行初始化。 类中字段如果类中的成员是基本数据类型，即使没有进行初始化，Java也会确保它获得一个默认值，但是如果字段是对某个对象的引用，那么必须初始化该引用。 static当声明一个类为s">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-20T01:31:39.438Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="于兆新|Blog">
-<meta name="twitter:description" content="个人博客">
+<meta name="twitter:title" content="JAVA-编程思想">
+<meta name="twitter:description" content="JAVA 编程思想-读书笔记第一章  略第二章 一切都是对象用引用操作对象一个引用如果在没有被初始化之前，向该引用发消息就会出现运行时异常，例如： 1String s  因此一种安全的做法：创建一个引用的同时便进行初始化。 类中字段如果类中的成员是基本数据类型，即使没有进行初始化，Java也会确保它获得一个默认值，但是如果字段是对某个对象的引用，那么必须初始化该引用。 static当声明一个类为s">
   
     <link rel="alternative" href="/atom.xml" title="于兆新|Blog" type="application/atom+xml">
   
@@ -158,104 +159,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-JAVA编程思想(6-10章)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-JAVA编程思想(1-5章)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/20/JAVA编程思想(6-10章)/">JAVA-编程思想</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/20/JAVA编程思想(6-10章)/" class="archive-article-date">
-  	<time datetime="2019-10-20T01:25:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第六章-访问权限控制"><a href="#第六章-访问权限控制" class="headerlink" title="第六章 访问权限控制"></a>第六章 访问权限控制</h2><p>首先给出访问权限控制等级，从最大权限到最小权限依次为：<code>public</code>&gt;<code>protected</code>&gt;<code>包访问权限（没有关键字）</code>&gt;<code>private</code>。</p>
-<h3 id="包：库单元"><a href="#包：库单元" class="headerlink" title="包：库单元"></a>包：库单元</h3><p><code>import</code>大家都很熟悉，我们之所以要导入，这里提供了一个管理名称空间的机制。说白了就是大家写的类有可能重名，重名了编译器并不知道该用哪个，如果定义了包名就指定了自己所在的真实位置，编译器也就知道用哪个类了。</p>
-<p>一个<code>java</code>源代码被称为一个编译单元，而在编译单元内只可以有一个<code>public</code>类，该类的名称必须与该文件的名称相同。如果该编译单元内还有额外的类的话，那么在包之外的世界是无法看见这些类的，因为他们不是<code>public</code>类。</p>
-<p><strong>类库</strong>实际上是一组类文件。如果希望这些文件从属于同一个群组，就可以使用关键字<code>package</code>。<br>如果使用<code>package</code>语句，它必须是文件中除注释意外的第一句程序代码。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我是注释，我不算</span></span><br><span class="line"><span class="keyword">package</span> access;</span><br></pre></td></tr></table></figure>
-
-<p>这表明你在声明该编译单元是名为<code>access</code>的类库的一部分。说白了就是该编译单元中的<code>public</code>类名称是位于<code>access</code>名称的保护伞下。</p>
-<p><strong>包命名规范：</strong><code>java</code>包的命名规范全部使用小写字母，包括中间的字母也是如此。<br><code>package</code>和<code>import</code>关键字是将单一的全局名称空间分割开，使得无论多少人编写类，都不会出现名称冲突的问题。前提是我们创建了一个独一无二的包名。</p>
-<h3 id="java访问权限修饰词"><a href="#java访问权限修饰词" class="headerlink" title="java访问权限修饰词"></a>java访问权限修饰词</h3><p>因为<code>public</code>和<code>private</code>访问权限其实很好理解。<code>public</code>就是任何地方都可用，完全公开，<code>private</code>就是别人都不能用，专门给自己用。而<em>包访问权限</em>和<em>继承访问权限</em>可能需要一定的理解。接下来进行分析：</p>
-<h4 id="包访问权限"><a href="#包访问权限" class="headerlink" title="包访问权限"></a>包访问权限</h4><p>如果不提供任何访问权限修饰词，则意味着它是<em>包访问权限</em>。也就是说包中的所有其他类对那个成员都有访问的权限。包访问权限为把类群聚在一个包中的做法提供了意义和理由。<br>看这样一个例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> access.dessert;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cookie</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cookie</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Cookie constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">bite</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"method bite"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> access;</span><br><span class="line"><span class="keyword">import</span> access.dessert.Cookie;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dinner</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Cookie cookie = <span class="keyword">new</span> Cookie();</span><br><span class="line">        <span class="comment">// cookie.bite(); // Can't access</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>通过上面的代码可以看出,<code>Dinner</code>和<code>Cookie</code>不在同一个包内，可以进行创建<code>Cookie</code>对象，但是不能访问<code>cookie</code>的<code>bite</code>方法。原因是因为<code>bite()</code>是默认的包访问权限。</p>
-<h4 id="继承访问权限"><a href="#继承访问权限" class="headerlink" title="继承访问权限"></a>继承访问权限</h4>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java-core</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/20/JAVA编程思想(6-10章)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JAVA编程思想(1-5章)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/22/JAVA编程思想(1-5章)/">JAVA-编程思想</a>
+    <h1 class="article-title" itemprop="name">
+      JAVA-编程思想
     </h1>
   
 
@@ -348,6 +259,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -366,16 +298,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/22/JAVA编程思想(1-5章)/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/22/JAVA编程思想(1-5章)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/10/20/JAVA编程思想(6-10章)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JAVA-编程思想
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -395,83 +395,14 @@
 
 
 
-
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/18/hello-world/">Hello World</a>
-    </h1>
   
 
-        
-        <a href="/2019/09/18/hello-world/" class="archive-article-date">
-  	<time datetime="2019-09-17T23:54:13.597Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/18/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -494,8 +425,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
